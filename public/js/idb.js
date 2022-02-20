@@ -7,9 +7,7 @@ request.onupgradeneeded = function (event) {
 };
 
 request.onsuccess = function (event) {
-
     db = event.target.result;
-
 
     if (navigator.onLine) {
         uploadBudgetTracker();
@@ -17,15 +15,12 @@ request.onsuccess = function (event) {
 };
 
 request.onerror = function (event) {
-
     console.log(event.target.errorCode);
 };
 
 function saveRecord(record) {
     const transaction = db.transaction(['budget_tracker'], 'readwrite');
-
     const pizzaObjectStore = transaction.objectStore('budget_tracker');
-
 
     pizzaObjectStore.add(record);
 }
@@ -33,11 +28,7 @@ function saveRecord(record) {
 function uploadBudgetTracker() {
 
     const transaction = db.transaction(['budget_tracker'], 'readwrite');
-
-
     const pizzaObjectStore = transaction.objectStore('budget_tracker');
-
-
     const getAll = pizzaObjectStore.getAll();
 
     getAll.onsuccess = function () {
