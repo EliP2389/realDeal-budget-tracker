@@ -12,7 +12,7 @@ request.onsuccess = function (event) {
 
 
     if (navigator.onLine) {
-        uploadPizza();
+        uploadBudgetTracker();
     }
 };
 
@@ -43,7 +43,7 @@ function uploadBudgetTracker() {
     getAll.onsuccess = function () {
 
         if (getAll.result.length > 0) {
-            fetch('/api/transactions/bulk', {
+            fetch('/api/transaction', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
