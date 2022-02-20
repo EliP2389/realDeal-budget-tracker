@@ -17,7 +17,7 @@ THEN the deposits or expenses added while they were offline are added to their t
 * IndexedDB
 
 ## Preview
-<img src='./assets/images/budget-img.png'/>
+<img src="./public/assets/images/budget-img.png"/>
 
 ## GitHub Repo
 https://github.com/EliP2389/realDeal-budget-tracker.git
